@@ -1,0 +1,36 @@
+events.html
+
+<form action="/create_event" method="POST" class="needs-validation" novalidate>
+  <div class="form-group">
+    <label for="title">Event Title:</label>
+    <input type="text" class="form-control" id="title" name="title" required>
+    <div class="invalid-feedback">Please provide a title for the event.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Event Description:</label>
+    <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+    <div class="invalid-feedback">Please provide a description for the event.</div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="date">Event Date:</label>
+      <input type="date" class="form-control" id="date" name="date" required>
+      <div class="invalid-feedback">Please provide a date for the event.</div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="time">Event Time:</label>
+      <input type="time" class="form-control" id="time" name="time" required>
+      <div class="invalid-feedback">Please provide a time for the event.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="location">Event Location:</label>
+    <input type="text" class="form-control" id="location" name="location" required>
+    <div class="invalid-feedback">Please provide a location for the event.</div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Create Event</button>
+</form>
