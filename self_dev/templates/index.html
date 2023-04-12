@@ -1,0 +1,30 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Self Development App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="image-text-container">
+            <img src="{{ url_for('static', filename='images/Enlightenment.png') }}" alt="Improve your path to enlightenment!" style="width: 70px; height: 70px;">
+            <h3>Improve your path to enlightenment!</h3>
+          </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('goals') }}">Goals</a></li>
+                <li><a href="{{ url_for('habits') }}">Habits</a></li>
+                <li><a href="{{ url_for('journal') }}">Journal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Welcome to Self Development App</h1>
+        <p>This app is designed to help you track your goals, habits, and journal entries.</p>
+    </main>
+</body>
+</html>

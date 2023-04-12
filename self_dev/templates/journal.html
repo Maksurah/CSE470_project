@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+  
+  <div class="image-text-container">
+    <img src="{{ url_for('static', filename='images/journals.png') }}" alt="" style="width: 60px; height: 60px;">
+  </div>
+
+  <h1>Journal</h1>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <form method="POST" action="{{ url_for('journal') }}">
+          {{ form.hidden_tag() }}
+          <div class="form-group">
+            {{ form.title.label(class="form-control-label") }}
+            {{ form.title(class="form-control") }}
+          </div>
+          <div class="form-group">
+            {{ form.content.label(class="form-control-label") }}
+            {{ form.content(class="form-control") }}
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      {% for entry in entries %}
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">{{ entry.title }}</h5>
+              <p class="card-text">{{ entry.content }}</p>
+              <p class="card-text"><small class="text-muted">{{ entry.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</small></p>
+              <a href="{{ url_for('delete_journal_entry', id=entry.id) }}" class="btn btn-danger btn-sm">Delete</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}
+
